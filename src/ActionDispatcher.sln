@@ -5,6 +5,10 @@ VisualStudioVersion = 17.9.34407.89
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sg.ActionDispatcher", "Sg.ActionDispatcher\Sg.ActionDispatcher.csproj", "{2D930D09-8469-4B91-BFB6-E337A62CF9E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sg.ActionDispatcher.SourceGenerator", "Sg.ActionDispatcher.SourceGenerator\Sg.ActionDispatcher.SourceGenerator.csproj", "{CAD50C6D-105C-4EA4-9323-8FD134099F36}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sg.Extensions.CodeAnalysis", "..\..\Extensions.CodeAnalysis\src\Sg.Extensions.CodeAnalysis\Sg.Extensions.CodeAnalysis.csproj", "{F9C3F5A6-6A20-4458-8CDB-6401843B39FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{2D930D09-8469-4B91-BFB6-E337A62CF9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D930D09-8469-4B91-BFB6-E337A62CF9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D930D09-8469-4B91-BFB6-E337A62CF9E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAD50C6D-105C-4EA4-9323-8FD134099F36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD50C6D-105C-4EA4-9323-8FD134099F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD50C6D-105C-4EA4-9323-8FD134099F36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD50C6D-105C-4EA4-9323-8FD134099F36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9C3F5A6-6A20-4458-8CDB-6401843B39FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9C3F5A6-6A20-4458-8CDB-6401843B39FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9C3F5A6-6A20-4458-8CDB-6401843B39FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9C3F5A6-6A20-4458-8CDB-6401843B39FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
