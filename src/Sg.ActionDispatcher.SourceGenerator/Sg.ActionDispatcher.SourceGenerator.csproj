@@ -16,7 +16,7 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/SourceGeneration/ActionDispatcher</PackageProjectUrl>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<PackageOutputPath>./../../nupkg</PackageOutputPath>
+		<PackageOutputPath>./../../../nupkg</PackageOutputPath>
 	</PropertyGroup>
 	
 	<ItemGroup>
