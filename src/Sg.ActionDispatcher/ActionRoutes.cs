@@ -1,7 +1,6 @@
 ﻿#if NET8_0_OR_GREATER
 using System.Collections.Frozen;
 #endif
-using System.Collections.Immutable;
 using System.ComponentModel;
 using System.Diagnostics;
 
@@ -20,12 +19,9 @@ public static class ActionRoutes
 
     private static bool _readonly = false;
 
-    public static IReadOnlyCollection<Type> GetInstance() => _types.Keys;
-
     [EditorBrowsable(EditorBrowsableState.Never)]
     public static void RegisterType(Type handlerType, Type[] parameters, Func<object?[], object> createInstance)
     {
-
         if (_readonly)
         {
             //don't throw exception
@@ -59,7 +55,7 @@ public static class ActionRoutes
         }
     }
 
-    internal static void MakeReadOnly()
+    private static void MakeReadOnly()
     {
         if (!_readonly)
         {
@@ -71,21 +67,31 @@ public static class ActionRoutes
         }
     }
 
-    internal static ActionDeclaringTypeConstructor GetActionDeclaringTypeConstructor(Type instanceType)
+    internal static ActionDeclaringTypeConstructor GetActionDeclaringTypeConstructor(Type declaringType)
     {
+        MakeReadOnly();
+
 #if NET8_0_OR_GREATER
-        return _typesFrozen![instanceType];
+        if (_typesFrozen!.TryGetValue(declaringType, out var constructor))
+            return constructor;
 #else
-        return _types[instanceType];
+        if (_types.TryGetValue(declaringType, out var constructor))
+            return constructor;
 #endif
+        throw new KeyNotFoundException($"There is no registered action declaring of type '{declaringType.Name}'.");
     }
 
     internal static IReadOnlyList<ActionMethod> GetActionMethod(Type actionType)
     {
+        MakeReadOnly();
+
 #if NET8_0_OR_GREATER
-        return _actionsFrozen![actionType];
+        if (_actionsFrozen!.TryGetValue(actionType, out var methods))
+            return methods;
 #else
-        return _actions[actionType];
+        if (_actions.TryGetValue(actionType, out var methods))
+            return methods;
 #endif
+        throw new KeyNotFoundException($"There is no registered action of type '{actionType.Name}'.");
     }
 }

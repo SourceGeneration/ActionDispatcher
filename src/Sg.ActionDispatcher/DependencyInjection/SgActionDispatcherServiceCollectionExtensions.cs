@@ -10,7 +10,7 @@ public static class SgActionDispatcherServiceCollectionExtensions
         services.AddScoped<IActionSubscriber>(p => p.GetRequiredService<ActionSubscriber>());
         services.AddScoped<IActionNotifier>(p => p.GetRequiredService<ActionSubscriber>());
         services.AddScoped<IActionDispatcher, ActionDispatcher>();
-        ActionRoutes.MakeReadOnly();
+        //ActionRoutes.MakeReadOnly();
         return services;
     }
 }

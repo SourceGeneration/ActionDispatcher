@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>true</ImplicitUsings>
 
-		<Version>1.0.0-beta1.231216.1</Version>
+		<Version>1.0.0-beta1.231217.3</Version>
 
 		<Authors>SourceGeneration</Authors>
 		<RepositoryUrl>https://github.com/SourceGeneration/ActionDispatcher</RepositoryUrl>
@@ -14,9 +14,15 @@
 		<PackageProjectUrl>https://github.com/SourceGeneration/ActionDispatcher</PackageProjectUrl>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageOutputPath>./../../../nupkg</PackageOutputPath>
+		<PackageIcon>sg.png</PackageIcon>
 
 	</PropertyGroup>
-
+	<ItemGroup>
+		<None Include=".\..\..\sg.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
 	</ItemGroup>
