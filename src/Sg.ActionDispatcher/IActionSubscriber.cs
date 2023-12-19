@@ -1,4 +1,4 @@
-﻿namespace Sg.ActionDispatcher;
+﻿namespace SourceGeneration.ActionDispatcher;
 
 public interface IActionSubscriber
 {

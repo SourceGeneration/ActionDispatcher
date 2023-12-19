@@ -1,14 +1,27 @@
-﻿// See https://aka.ms/new-console-template for more information
-using Sg.ActionDispatcher;
+﻿using Microsoft.Extensions.DependencyInjection;
+using SourceGeneration.ActionDispatcher;
 
-Console.WriteLine("Hello, World!");
+var services = new ServiceCollection().AddActionDispatcher().BuildServiceProvider();
 
+var dispatcher = services.GetRequiredService<IActionDispatcher>();
+var subscriber = services.GetRequiredService<IActionSubscriber>();
 
-public class Action
+subscriber.Subscribe<Hello>(hello =>
 {
-    [ActionHandler]
-    public static void Handle(Action action)
-    {
+    Console.WriteLine("Hello action dispatched.");
+});
 
+dispatcher.Dispatch(new Hello { Say = "Hello Source Generation!" });
+
+Console.ReadLine();
+
+public class Hello
+{
+    public string? Say { get; set; }
+
+    [ActionHandler]
+    public static void Handle(Hello hello)
+    {
+        Console.WriteLine(hello.Say);
     }
 }

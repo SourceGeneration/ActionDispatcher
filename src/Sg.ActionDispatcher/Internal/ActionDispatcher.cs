@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.ExceptionServices;
 
-namespace Sg.ActionDispatcher;
+namespace SourceGeneration.ActionDispatcher;
 
 internal class ActionDispatcher(IServiceProvider services, IActionNotifier notifier) : IActionDispatcher
 {

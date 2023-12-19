@@ -6,15 +6,17 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>true</ImplicitUsings>
 
-		<Version>1.0.0-beta1.231217.3</Version>
+		<Version>1.0.0-beta1.231219.1</Version>
 
 		<Authors>SourceGeneration</Authors>
+		<Description>Action dispatch and subscribe framework</Description>
 		<RepositoryUrl>https://github.com/SourceGeneration/ActionDispatcher</RepositoryUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/SourceGeneration/ActionDispatcher</PackageProjectUrl>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageOutputPath>./../../../nupkg</PackageOutputPath>
 		<PackageIcon>sg.png</PackageIcon>
+		<PackageTags>action,command,event,mediator,dispatcher,subscrbier,source generation</PackageTags>
 
 	</PropertyGroup>
 	<ItemGroup>
@@ -33,7 +35,7 @@
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\Sg.ActionDispatcher.SourceGenerator\Sg.ActionDispatcher.SourceGenerator.csproj" />
+	  <ProjectReference Include="..\Sg.ActionDispatcher.SourceGenerator\SourceGeneration.ActionDispatcher.SourceGenerator.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Sg.ActionDispatcher;
+namespace SourceGeneration.ActionDispatcher;
 
 public static class SgActionDispatcherServiceCollectionExtensions
 {

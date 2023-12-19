@@ -1,6 +1,6 @@
 ﻿using System.Collections.Immutable;
 
-namespace Sg.ActionDispatcher;
+namespace SourceGeneration.ActionDispatcher;
 
 internal class ActionSubscriber : IActionSubscriber, IActionNotifier
 {

@@ -4,7 +4,7 @@ using System.Collections.Frozen;
 using System.ComponentModel;
 using System.Diagnostics;
 
-namespace Sg.ActionDispatcher;
+namespace SourceGeneration.ActionDispatcher;
 
 [EditorBrowsable(EditorBrowsableState.Never)]
 public static class ActionRoutes

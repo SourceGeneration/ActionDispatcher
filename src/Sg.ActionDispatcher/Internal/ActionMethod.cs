@@ -1,4 +1,4 @@
-﻿namespace Sg.ActionDispatcher;
+﻿namespace SourceGeneration.ActionDispatcher;
 
 internal sealed class ActionMethod(Type[] parameters, Func<object?[], Task> invoker)
 {

@@ -7,7 +7,8 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Sg.ActionDispatcher" Version="1.0.0-beta1.231217.3" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+		<PackageReference Include="SourceGeneration.ActionDispatcher" Version="1.0.0-beta1.231219.1" />
 	</ItemGroup>
 
 </Project>

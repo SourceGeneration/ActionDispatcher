@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace Sg.ActionDispatcher.SourceGenerator;
+namespace SourceGeneration.ActionDispatcher.SourceGenerator;
 
 [Generator(LanguageNames.CSharp)]
 public class ActionRoutesSourceGenerator : IIncrementalGenerator
 {
-    public const string RootNamespace = "Sg.ActionDispatcher";
+    public const string RootNamespace = "SourceGeneration.ActionDispatcher";
     public const string HandleAttribute = $"{RootNamespace}.ActionHandlerAttribute";
 
     public void Initialize(IncrementalGeneratorInitializationContext context)
