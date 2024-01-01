@@ -22,14 +22,14 @@ public class ActionRoutesSourceGenerator : IIncrementalGenerator
             {
                 if (node is not MethodDeclarationSyntax method
                     || method.IsAbstract()
-                    || !method.IsPublic()
+                    || !method.IsPublicOrInternal()
                     || method.TypeParameterList != null
                     || method.ParameterList.Parameters.Count == 0)
                 {
                     return false;
                 }
 
-                if (node.Parent is ClassDeclarationSyntax or InterfaceDeclarationSyntax)
+                if (node.Parent is ClassDeclarationSyntax or InterfaceDeclarationSyntax or RecordDeclarationSyntax)
                 {
                     return true;
                 }

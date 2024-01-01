@@ -69,6 +69,7 @@ internal class ActionDispatcher(IServiceProvider services, IActionNotifier notif
 
             tasks[i] = method.InvokeAsync(arguments);
         }
+
         return Task.WhenAll(tasks);
 
         object GetRequiredService(Type serviceType)

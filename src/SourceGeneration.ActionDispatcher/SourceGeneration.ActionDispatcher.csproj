@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>true</ImplicitUsings>
 
-		<Version>1.0.0-beta1.231219.1</Version>
+		<Version>1.0.0-beta1.231227.2</Version>
 
 		<Authors>SourceGeneration</Authors>
 		<Description>Action dispatch and subscribe framework</Description>
@@ -35,7 +35,7 @@
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\Sg.ActionDispatcher.SourceGenerator\SourceGeneration.ActionDispatcher.SourceGenerator.csproj" />
+	  <ProjectReference Include="..\SourceGeneration.ActionDispatcher.SourceGenerator\SourceGeneration.ActionDispatcher.SourceGenerator.csproj" />
 	</ItemGroup>
 
 </Project>

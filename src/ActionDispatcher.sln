@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34407.89
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sg.ActionDispatcher", "Sg.ActionDispatcher\Sg.ActionDispatcher.csproj", "{2D930D09-8469-4B91-BFB6-E337A62CF9E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SourceGeneration.ActionDispatcher.SourceGenerator", "SourceGeneration.ActionDispatcher.SourceGenerator\SourceGeneration.ActionDispatcher.SourceGenerator.csproj", "{B6247284-DF57-4587-88BB-C1C2281E3057}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sg.ActionDispatcher.SourceGenerator", "Sg.ActionDispatcher.SourceGenerator\Sg.ActionDispatcher.SourceGenerator.csproj", "{CAD50C6D-105C-4EA4-9323-8FD134099F36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SourceGeneration.ActionDispatcher", "SourceGeneration.ActionDispatcher\SourceGeneration.ActionDispatcher.csproj", "{797C7F56-B7C5-4D49-8E97-94963F98EA03}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sg.Extensions.CodeAnalysis", "..\..\Extensions.CodeAnalysis\src\Sg.Extensions.CodeAnalysis\Sg.Extensions.CodeAnalysis.csproj", "{F9C3F5A6-6A20-4458-8CDB-6401843B39FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SourceGeneration.ActionDispatcher.Sample", "SourceGeneration.ActionDispatcher.Sample\SourceGeneration.ActionDispatcher.Sample.csproj", "{5365025B-E241-44B7-ADEF-CBE2821E7936}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2D930D09-8469-4B91-BFB6-E337A62CF9E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D930D09-8469-4B91-BFB6-E337A62CF9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D930D09-8469-4B91-BFB6-E337A62CF9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D930D09-8469-4B91-BFB6-E337A62CF9E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CAD50C6D-105C-4EA4-9323-8FD134099F36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CAD50C6D-105C-4EA4-9323-8FD134099F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CAD50C6D-105C-4EA4-9323-8FD134099F36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CAD50C6D-105C-4EA4-9323-8FD134099F36}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9C3F5A6-6A20-4458-8CDB-6401843B39FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9C3F5A6-6A20-4458-8CDB-6401843B39FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9C3F5A6-6A20-4458-8CDB-6401843B39FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9C3F5A6-6A20-4458-8CDB-6401843B39FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6247284-DF57-4587-88BB-C1C2281E3057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6247284-DF57-4587-88BB-C1C2281E3057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6247284-DF57-4587-88BB-C1C2281E3057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6247284-DF57-4587-88BB-C1C2281E3057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{797C7F56-B7C5-4D49-8E97-94963F98EA03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{797C7F56-B7C5-4D49-8E97-94963F98EA03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{797C7F56-B7C5-4D49-8E97-94963F98EA03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{797C7F56-B7C5-4D49-8E97-94963F98EA03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5365025B-E241-44B7-ADEF-CBE2821E7936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5365025B-E241-44B7-ADEF-CBE2821E7936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5365025B-E241-44B7-ADEF-CBE2821E7936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5365025B-E241-44B7-ADEF-CBE2821E7936}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
