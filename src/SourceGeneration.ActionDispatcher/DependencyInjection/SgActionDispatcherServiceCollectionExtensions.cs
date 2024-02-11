@@ -1,16 +1,16 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace SourceGeneration.ActionDispatcher;
 
 public static class SgActionDispatcherServiceCollectionExtensions
 {
-    public static IServiceCollection AddActionDispatcher(this IServiceCollection services)
+    public static IServiceCollection AddActionDispatcher(this IServiceCollection services, ServiceLifetime serviceLifetime = ServiceLifetime.Scoped)
     {
-        services.AddScoped<ActionSubscriber>();
-        services.AddScoped<IActionSubscriber>(p => p.GetRequiredService<ActionSubscriber>());
-        services.AddScoped<IActionNotifier>(p => p.GetRequiredService<ActionSubscriber>());
-        services.AddScoped<IActionDispatcher, ActionDispatcher>();
-        //ActionRoutes.MakeReadOnly();
+        services.TryAdd(new ServiceDescriptor(typeof(ActionSubscriber), typeof(ActionSubscriber), serviceLifetime));
+        services.TryAdd(new ServiceDescriptor(typeof(IActionSubscriber), p => p.GetRequiredService<ActionSubscriber>(), serviceLifetime));
+        services.TryAdd(new ServiceDescriptor(typeof(IActionNotifier), p => p.GetRequiredService<ActionSubscriber>(), serviceLifetime));
+        services.TryAdd(new ServiceDescriptor(typeof(IActionDispatcher), typeof(ActionDispatcher), serviceLifetime));
         return services;
     }
 }
