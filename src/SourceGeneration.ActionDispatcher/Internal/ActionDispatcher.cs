@@ -3,7 +3,7 @@ using System.Runtime.ExceptionServices;
 
 namespace SourceGeneration.ActionDispatcher;
 
-internal class ActionDispatcher(IServiceProvider services, IActionNotifier notifier) : IActionDispatcher
+internal class ActionDispatcher(ActionDispatcherOptions options, IServiceProvider services, IActionNotifier notifier) : IActionDispatcher
 {
     public async void Dispatch(object action, CancellationToken cancellationToken = default) => await DispatchAsync(action, false, cancellationToken);
 
@@ -40,7 +40,14 @@ internal class ActionDispatcher(IServiceProvider services, IActionNotifier notif
 
     private Task DispatchAsyncCore(object action, CancellationToken cancellationToken)
     {
-        var methods = ActionRoutes.GetActionMethod(action.GetType());
+        var actionType = action.GetType();
+        var methods = ActionRoutes.GetActionMethod(actionType);
+
+        if(methods.Count == 0 && !options.IgnoreHandlerNotMatched)
+        {
+            throw new KeyNotFoundException($"No action handler of type '{actionType}' has matched.");
+        }
+
         Task[] tasks = new Task[methods.Count];
 
         Dictionary<Type, object> injects = [];

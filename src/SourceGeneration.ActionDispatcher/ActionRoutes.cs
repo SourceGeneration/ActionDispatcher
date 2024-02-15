@@ -92,6 +92,6 @@ public static class ActionRoutes
         if (_actions.TryGetValue(actionType, out var methods))
             return methods;
 #endif
-        throw new KeyNotFoundException($"There is no registered action of type '{actionType.Name}'.");
+        return [];
     }
 }
