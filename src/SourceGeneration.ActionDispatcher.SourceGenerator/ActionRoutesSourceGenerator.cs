@@ -30,9 +30,10 @@ public class ActionRoutesSourceGenerator : IIncrementalGenerator
                 }
 
                 if (node.Parent is ClassDeclarationSyntax or InterfaceDeclarationSyntax or RecordDeclarationSyntax)
-                {
                     return true;
-                }
+
+                if (node.Parent is StructDeclarationSyntax && method.IsStatic())
+                    return true;
 
                 return false;
             },
