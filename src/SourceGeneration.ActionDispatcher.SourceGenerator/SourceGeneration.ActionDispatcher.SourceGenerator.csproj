@@ -15,7 +15,7 @@
 		<AnalyzerLanguage>cs</AnalyzerLanguage>
 		<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
 
-		<Version>1.0.0-beta1.240211.8</Version>
+		<Version>1.0.0-beta1.240215.1</Version>
 
 		<Authors>SourceGeneration</Authors>
 		<RepositoryUrl>https://github.com/SourceGeneration/ActionDispatcher</RepositoryUrl>
@@ -38,11 +38,9 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="SourceGeneration.Utilities" Version="1.0.0-beta1.240211.6" GeneratePathProperty="true" PrivateAssets="true" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
-		<None Include="$(PkgSourceGeneration_Utilities)\lib\netstandard2.0\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
 	</ItemGroup>
 
 </Project>
