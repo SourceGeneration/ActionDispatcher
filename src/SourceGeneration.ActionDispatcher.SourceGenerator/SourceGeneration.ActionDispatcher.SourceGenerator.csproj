@@ -15,7 +15,7 @@
 		<AnalyzerLanguage>cs</AnalyzerLanguage>
 		<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
 
-		<Version>1.0.0-beta1.240215.1</Version>
+		<Version>1.0.0-beta1.240217.1</Version>
 
 		<Authors>SourceGeneration</Authors>
 		<RepositoryUrl>https://github.com/SourceGeneration/ActionDispatcher</RepositoryUrl>
