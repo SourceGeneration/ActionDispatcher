@@ -8,4 +8,6 @@ public enum ActionDispatchStatus
     Successed = 4,
     Faulted = 8,
     RanToCompletion = Successed | Faulted | Canceled,
+
+    All = WaitingToDispatch | RanToCompletion,
 }
