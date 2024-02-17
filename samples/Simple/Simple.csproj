@@ -11,7 +11,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.0" />
-		<PackageReference Include="SourceGeneration.ActionDispatcher" Version="1.0.0-beta1.240211.8" />
+		<PackageReference Include="SourceGeneration.ActionDispatcher" Version="1.0.0-beta1.240217.1" />
 	</ItemGroup>
 
 </Project>
