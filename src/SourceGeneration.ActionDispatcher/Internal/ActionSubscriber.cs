@@ -5,7 +5,7 @@ namespace SourceGeneration.ActionDispatcher;
 internal class ActionSubscriber : IActionSubscriber, IActionNotifier
 {
     private readonly object _lock = new();
-    private ImmutableArray<SubscriptionBase> _subscriptions = [];
+    private ImmutableArray<SubscriptionBase> _subscriptions = ImmutableArray.Create<SubscriptionBase>();
 
     public void Notify(ActionDispatchStatus status, object action, Exception? exception)
     {
