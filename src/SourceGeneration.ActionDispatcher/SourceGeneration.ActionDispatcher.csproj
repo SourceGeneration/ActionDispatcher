@@ -23,6 +23,7 @@
 		<None Include=".\..\..\sg.png">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
+			<Visible>false</Visible>
 		</None>
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">

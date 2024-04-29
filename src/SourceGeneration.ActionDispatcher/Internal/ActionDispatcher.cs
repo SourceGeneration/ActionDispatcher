@@ -5,11 +5,11 @@ namespace SourceGeneration.ActionDispatcher;
 
 internal class ActionDispatcher(IServiceProvider services, IActionNotifier notifier) : IActionDispatcher
 {
-    public async void Dispatch(object action, CancellationToken cancellationToken = default) => await DispatchAsync(action, false, cancellationToken);
+    public async void Dispatch(object action, ActionDispatchOptions? options, CancellationToken cancellationToken = default) => await DispatchAsync(action, options, false, cancellationToken);
 
-    public Task DispatchAsync(object action, CancellationToken cancellationToken = default) => DispatchAsync(action, true, cancellationToken);
+    public Task DispatchAsync(object action, ActionDispatchOptions? options, CancellationToken cancellationToken = default) => DispatchAsync(action, options, true, cancellationToken);
 
-    private async Task DispatchAsync(object action, bool throwException, CancellationToken cancellationToken)
+    private async Task DispatchAsync(object action, ActionDispatchOptions? options, bool throwException, CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(action, nameof(action));
 
@@ -17,7 +17,7 @@ internal class ActionDispatcher(IServiceProvider services, IActionNotifier notif
 
         try
         {
-            await DispatchAsyncCore(action, cancellationToken);
+            await DispatchAsyncCore(action, options, cancellationToken);
         }
         catch (OperationCanceledException ex)
         {
@@ -38,14 +38,23 @@ internal class ActionDispatcher(IServiceProvider services, IActionNotifier notif
         notifier.Notify(ActionDispatchStatus.Successed, action);
     }
 
-    private Task DispatchAsyncCore(object action, CancellationToken cancellationToken)
+    private Task DispatchAsyncCore(object action, ActionDispatchOptions? options, CancellationToken cancellationToken)
     {
         var actionType = action.GetType();
         var methods = ActionRoutes.GetActionMethod(actionType);
 
-        if(methods.Count == 0)
+        if (methods.Count == 0)
         {
-            throw new KeyNotFoundException($"No action handler of type '{actionType}' has matched.");
+            options ??= ActionDispatchOptions.Default;
+
+            if (options.ThrowExceptionWhenNotHandled)
+            {
+                throw new KeyNotFoundException($"No action handler of type '{actionType}' has matched.");
+            }
+            else
+            {
+                return Task.CompletedTask;
+            }
         }
 
         Task[] tasks = new Task[methods.Count];
