@@ -3,9 +3,10 @@
 public class ActionDispatchOptions
 {
     public bool ThrowExceptionWhenNotHandled { get; set; } = true;
+    public bool BroadcastOnly { get; set; }
 
     internal static readonly ActionDispatchOptions Default = new();
-    internal static readonly ActionDispatchOptions Broadcast = new() { ThrowExceptionWhenNotHandled = false };
+    internal static readonly ActionDispatchOptions Broadcast = new() { ThrowExceptionWhenNotHandled = false, BroadcastOnly = true };
 }
 
 public interface IActionDispatcher
