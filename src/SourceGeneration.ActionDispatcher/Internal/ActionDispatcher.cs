@@ -17,7 +17,10 @@ internal class ActionDispatcher(IServiceProvider services, IActionNotifier notif
 
         try
         {
-            await DispatchAsyncCore(action, options, cancellationToken);
+            if (options == null || !options.BroadcastOnly)
+            {
+                await DispatchAsyncCore(action, options, cancellationToken);
+            }
         }
         catch (OperationCanceledException ex)
         {
