@@ -5,8 +5,12 @@ namespace SourceGeneration.ActionDispatcher;
 
 internal class ActionSubscriber(ILogger<ActionSubscriber> logger) : IActionSubscriber, IActionNotifier
 {
+#if NET9_0_OR_GREATER
+    private readonly Lock _lock = new();
+#else
     private readonly object _lock = new();
-    private ImmutableArray<SubscriptionBase> _subscriptions = ImmutableArray.Create<SubscriptionBase>();
+#endif
+    private ImmutableArray<SubscriptionBase> _subscriptions = [];
 
     public void Notify(ActionDispatchStatus status, object action, Exception? exception)
     {
