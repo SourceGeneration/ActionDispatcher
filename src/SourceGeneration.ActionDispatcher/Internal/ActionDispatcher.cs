@@ -9,6 +9,9 @@ internal class ActionDispatcher(IServiceProvider services, IActionNotifier notif
 
     public Task DispatchAsync(object action, ActionDispatchOptions? options, CancellationToken cancellationToken = default) => DispatchAsync(action, options, true, cancellationToken);
 
+    public void Broadcast(object action, CancellationToken cancellationToken = default) => Dispatch(action, ActionDispatchOptions.Broadcast, cancellationToken);
+    public Task BroadcastAsync(object action, CancellationToken cancellationToken = default) => DispatchAsync(action, ActionDispatchOptions.Broadcast, cancellationToken);
+
     private async Task DispatchAsync(object action, ActionDispatchOptions? options, bool throwException, CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(action, nameof(action));
