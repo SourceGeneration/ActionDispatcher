@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.ExceptionServices;
 
-namespace SourceGeneration.ActionDispatcher;
+namespace SourceGeneration.ActionDispatcher.Internal;
 
 internal class ActionDispatcher(IServiceProvider services, IActionNotifier notifier) : IActionDispatcher
 {
@@ -9,8 +9,7 @@ internal class ActionDispatcher(IServiceProvider services, IActionNotifier notif
 
     public Task DispatchAsync(object action, ActionDispatchOptions? options, CancellationToken cancellationToken = default) => DispatchAsync(action, options, true, cancellationToken);
 
-    public void Broadcast(object action, CancellationToken cancellationToken = default) => Dispatch(action, ActionDispatchOptions.Broadcast, cancellationToken);
-    public Task BroadcastAsync(object action, CancellationToken cancellationToken = default) => DispatchAsync(action, ActionDispatchOptions.Broadcast, cancellationToken);
+    public void Notify(object action) => notifier.Notify(ActionDispatchStatus.Successed, action);
 
     private async Task DispatchAsync(object action, ActionDispatchOptions? options, bool throwException, CancellationToken cancellationToken)
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.Collections.Immutable;
 
-namespace SourceGeneration.ActionDispatcher;
+namespace SourceGeneration.ActionDispatcher.Internal;
 
 internal class ActionSubscriber(ILogger<ActionSubscriber> logger) : IActionSubscriber, IActionNotifier
 {
