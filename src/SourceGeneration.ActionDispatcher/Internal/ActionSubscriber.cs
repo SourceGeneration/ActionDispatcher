@@ -12,6 +12,9 @@ internal class ActionSubscriber(ILogger<ActionSubscriber> logger) : IActionSubsc
 #endif
     private ImmutableArray<SubscriptionBase> _subscriptions = [];
 
+    public void Notify(object action) => Notify(ActionDispatchStatus.Successed, action, null);
+    public void Notify(object action, Exception exception) => Notify(ActionDispatchStatus.Faulted, action, exception);
+
     public void Notify(ActionDispatchStatus status, object action, Exception? exception)
     {
         var subscribes = _subscriptions;
