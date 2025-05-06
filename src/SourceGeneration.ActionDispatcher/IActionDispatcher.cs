@@ -17,8 +17,7 @@ public interface IActionDispatcher
     //void Dispatch(object action, CancellationToken cancellationToken = default) => Dispatch(action, null, cancellationToken);
     //Task DispatchAsync(object action, CancellationToken cancellationToken = default) => DispatchAsync(action, null, cancellationToken);
 
-    void Broadcast(object action, CancellationToken cancellationToken = default);
-    Task BroadcastAsync(object action, CancellationToken cancellationToken = default);
+    void Notify(object action);
 
     //void Dispatch<TAction>(CancellationToken cancellationToken = default) where TAction : new() => Dispatch(new TAction(), null, cancellationToken);
     //Task DispatchAsync<TAction>(CancellationToken cancellationToken = default) where TAction : new() => DispatchAsync(new TAction(), null, cancellationToken);
