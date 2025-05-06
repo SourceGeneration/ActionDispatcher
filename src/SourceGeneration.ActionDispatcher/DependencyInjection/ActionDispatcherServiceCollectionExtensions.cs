@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using SourceGeneration.ActionDispatcher.Internal;
 
 namespace SourceGeneration.ActionDispatcher;
 
@@ -7,7 +8,7 @@ public static class ActionDispatcherServiceCollectionExtensions
 {
     public static IServiceCollection AddActionDispatcher(this IServiceCollection services, ServiceLifetime dispatcherLifetime = ServiceLifetime.Scoped, ServiceLifetime subscriberLifetime = ServiceLifetime.Scoped)
     {
-        services.Add(new ServiceDescriptor(typeof(IActionDispatcher), typeof(ActionDispatcher), dispatcherLifetime));
+        services.Add(new ServiceDescriptor(typeof(IActionDispatcher), typeof(Internal.ActionDispatcher), dispatcherLifetime));
 
         services.TryAdd(new ServiceDescriptor(typeof(ActionSubscriber), typeof(ActionSubscriber), subscriberLifetime));
         services.TryAdd(new ServiceDescriptor(typeof(IActionSubscriber), p => p.GetRequiredService<ActionSubscriber>(), subscriberLifetime));
