@@ -1,6 +1,7 @@
 ﻿#if NET8_0_OR_GREATER
 using System.Collections.Frozen;
 #endif
+using SourceGeneration.ActionDispatcher.Internal;
 using System.ComponentModel;
 using System.Diagnostics;
 
